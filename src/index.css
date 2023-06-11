@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: OrgonPlan-Regular, sans-serif;
+}
+button{
+    font-family: OrgonPlan-Medium, sans-serif;
+}
+
+.bold{
+    font-family: OrgonPlan-Bold, sans-serif;
+}
+
+.regular{
+    font-family: OrgonPlan-Regular, sans-serif;
+}
+
+.bookFF{
+    font-family: OrgonPlan-Book, sans-serif;
+}
+
+.medium{
+    font-family: OrgonPlan-Medium, sans-serif;
+}
+
+.demi-bold{
+    font-family: OrgonPlan-DemiBold, sans-serif;
+}
+
+.light{
+    font-family: OrgonPlan-Light, sans-serif;
+}
+
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-6{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid-5{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 6%;
+}
+
+.grid-4{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid-3-1{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-15-1{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+
+
+.grid-1-15{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-gap: 35px;
+}
+
+.relative{
+    position: relative;
+}
+
+.right-position{
+    position: absolute;
+    right: 30px;
+}
+
+.offer-box:hover{
+    box-shadow: rgb(105, 96, 205, 0.3) 2px 4px 29px 0;
+}
+
+.placeHolderColor input::placeholder{
+    color: rgb(180,172,234);
+}
+
+
+
+
+
+
+@font-face {
+    font-family: 'Bronkoh-ExtraBold';
+    src: local('Bronkoh-ExtraBold'), url(./assets/css/Bronkoh-ExtraBold.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'OrgonPlan-Light';
+    src: local('OrgonPlan-Light'), url(./assets/css/OrgonPlan-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'OrgonPlan-Book';
+    src: local('OrgonPlan-Book'), url(./assets/css/OrgonPlan-Book.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'OrgonPlan-Bold';
+    src: local('OrgonPlan-Bold'), url(./assets/css/OrgonPlan-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'OrgonPlan-DemiBold';
+    src: local('OrgonPlan-DemiBold'), url(./assets/css/OrgonPlan-DemiBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'OrgonPlan-Medium';
+    src: local('OrgonPlan-Medium'), url(./assets/css/OrgonPlan-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'OrgonPlan-Regular';
+    src: local('OrgonPlan-Regular'), url(./assets/css/OrgonPlan-Regular.ttf) format('truetype');
+}

@@ -1,10 +1,11 @@
 import styled from "styled-components";
+// import StyledButton from "./StyledButton";
 
 const StyledImg1 = styled.img`
-  margin: -5px 8px -5px 0;
+  //margin: -5px 8px;
 `
 const StyledImg2 = styled.img`
-  margin: -5px 0 -5px 8px;
+  margin-top: 2px;
   transform: scale(2);
 `
 
@@ -14,8 +15,8 @@ const Button = (
         color,
         text,
         backgroundColor,
-        src1,
-        src2,
+        rightImg,
+        leftImg,
         classname,
         borderRadius,
         fontSize
@@ -23,12 +24,17 @@ const Button = (
     }) => {
 
     const style = {
-        padding: '15px 20px',
+        padding: '7.5px 14.5px',
         borderRadius,
         border: 'none',
-        fontSize : fontSize ? fontSize : '16px',
+        lineHeight: '24px',
+        textAlign: 'center',
+        fontSize,
         color: color ? color : 'white',
-        backgroundColor,
+        backgroundColor : backgroundColor ? backgroundColor : 'unset',
+        display: 'grid',
+        gridGap: '6px',
+        gridTemplateColumns: '1fr 2fr 1fr'
     }
 
     return(
@@ -37,9 +43,9 @@ const Button = (
             onClick={onclick}
             style={style}
         >
-            <StyledImg1 src={src1} alt={'>'}/>
+            <StyledImg1 src={leftImg} alt={'>'}/>
             {text}
-            <StyledImg2 src={src2} alt={'>'}/>
+            <StyledImg2 src={rightImg} alt={'>'}/>
         </button>
     )
 }

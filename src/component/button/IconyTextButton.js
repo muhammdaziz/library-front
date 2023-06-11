@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import StyledButton from "./StyledButton";
 
 const StyledImg = styled.img`
-  margin: -5px 8px -5px 0;
+  margin: -5px 8px -10px 0;
+  transform: scale(0.9);
 `
 
 const Button = (
@@ -16,22 +18,21 @@ const Button = (
     }) => {
 
     const style = {
-        padding: '15px 20px',
         borderRadius: '10px',
         border: 'none',
-        fontSize: fontSize ? fontSize : '16px',
+        fontSize,
         color: color ? color : 'white',
-        backgroundColor: backgroundColor ? backgroundColor : 'rgb(1, 2, 3, 0.5)',
+        backgroundColor: backgroundColor ? backgroundColor : 'unset',
     }
 
     return(
-        <button
+        <StyledButton
             onClick={onclick}
             style={style}
         >
             <StyledImg src={src} alt={'>'}/>
             {text}
-        </button>
+        </StyledButton>
     )
 }
 

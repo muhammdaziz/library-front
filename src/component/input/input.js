@@ -1,28 +1,37 @@
 import styled from "styled-components";
 
-
+const StyledInput = styled.input`
+    border: none;
+    outline: none;
+    text-indent: 15px;
+`
 
 const Input = ({
     placeholder,
     backgroundColor,
     color,
     borderColor,
+    padding,
     type,
+    border,
     borderRadius,
-               }) => {
+    fontSize,
+    width,
+    className,
 
-    const StyledInput = styled.input`
-      padding: 15px;
-      border: none;
-      outline: none;
-      font-size: 16px;
-    `
+               }) => {
 
     const style = {
         backgroundColor,
         borderColor,
         color,
-        borderRadius: borderRadius ? borderRadius : '10px',
+        borderRadius,
+        width,
+        padding,
+        fontSize,
+        border,
+        borderTop:'none',
+        borderBottom:'none'
     }
 
     return(
@@ -30,6 +39,7 @@ const Input = ({
             style={style}
             placeholder={placeholder}
             type={type}
+            className={className}
 
         />
     )

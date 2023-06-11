@@ -1,0 +1,125 @@
+.M-O-C-R-box .owl-carousel .owl-nav button.owl-prev,
+.M-O-C-R-box .owl-carousel .owl-nav button.owl-next {
+    z-index: 1;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(240, 238, 253);
+    border-radius: 50%;
+    border: rgb(180,172,234) solid 1px;
+    position: absolute;
+    top: 47%;
+    transform: translatey(-50%);
+}
+
+.M-O-C-R-box .owl-carousel{
+    /*width: 103%;*/
+    /*overflow: hidden;*/
+}
+
+.M-O-C-R-box .owl-nav button span {
+    font-size: 26px;
+    color: rgb(105, 96, 205);
+    height: 100%;
+    display: block;
+    width: 100%;
+}
+
+.M-O-C-R-box .owl-carousel .owl-nav button.owl-prev {
+    left: -20px;
+}
+.M-O-C-R-box .owl-carousel .owl-nav button.owl-next {
+    right: -20px;
+}
+
+/* ----------------------------- */
+
+
+.offer-carousel  .owl-carousel .owl-stage-outer{
+    padding-bottom: 25px;
+}
+
+.offer-carousel .owl-carousel .owl-nav button.owl-prev,
+.offer-carousel .owl-carousel .owl-nav button.owl-next {
+    z-index: 1;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(240, 238, 253);
+    border-radius: 50%;
+    border: rgb(180,172,234) solid 1px;
+    transform: translatey(-50%);
+}
+
+.offer-carousel .owl-carousel .owl-nav{
+    /*background-color: red;*/
+}
+
+.offer-carousel .owl-nav button span {
+    font-size: 26px;
+    color: rgb(105, 96, 205);
+}
+
+.offer-carousel .owl-carousel .owl-nav button.owl-prev {
+    left: -20px;
+}
+.offer-carousel .owl-carousel .owl-nav button.owl-next {
+    right: -20px;
+}
+
+/* --------------------------- */
+
+.sale-owl-carousel .owl-carousel .owl-nav button.owl-prev,
+.sale-owl-carousel .owl-carousel .owl-nav button.owl-next {
+    z-index: 1;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(240, 238, 253);
+    border-radius: 50%;
+    border: rgb(180,172,234) solid 1px;
+    position: absolute;
+    top: -16.5%;
+    transform: translatey(-50%);
+}
+
+.sale-owl-carousel .owl-dots{
+    width: fit-content;
+    position: absolute;
+    top: -18%;
+    right: 2%;
+}
+
+
+.sale-owl-carousel .owl-nav button span {
+    font-size: 26px;
+    color: rgb(105, 96, 205);
+    height: 100%;
+    display: block;
+    width: 100%;
+}
+
+.sale-owl-carousel .owl-carousel .owl-nav button.owl-prev {
+    right: 100px;
+}
+.sale-owl-carousel .owl-carousel .owl-nav button.owl-next {
+    right: -20px;
+}
+
+/* --------------------------------*/
+
+.testimonial-carousel  .owl-carousel{
+}
+
+.testimonial-carousel  .owl-carousel .owl-stage-outer{
+    padding-bottom: 40px;
+}
+
+.testimonial-carousel .owl-item{
+    filter: blur(2px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.testimonial-carousel .owl-item.active.center {
+    box-shadow: rgb(105, 96, 205, 0.3) 4px 14px 29px 0;
+    filter: none;
+    border: none;
+}

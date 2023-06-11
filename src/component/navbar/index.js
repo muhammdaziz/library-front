@@ -3,10 +3,15 @@ import IconyButton from "../button/IconyButton";
 import svg from "../../assets/images/railways_logo.png";
 import svg1 from "../../assets/icons/grid.svg";
 import svg2 from "../../assets/icons/bottomArrow.svg";
+import img from '../../assets/images/train.jpg'
 
 import Input from "../input/input";
 import DropDown from "../dropdown/DropDown";
 import LogoBtn from "../button/LogoBtn";
+import Frame from "../frame/frame";
+import H1 from "../text/h1";
+import H4 from "../text/h4";
+import H2 from "../text/h2";
 
 const Navbar = () => {
     const option = [
@@ -51,6 +56,36 @@ const Navbar = () => {
             <DropDown src1={svg1} src2={svg2}/>
 
             <LogoBtn src={svg} title={'Bookoe'} subtitle={'Book store website'}/>
+
+            <Frame
+                backgroundColor={'red'
+            }
+                   margin={'10px'}
+                   borderRadius={'10px'}
+                   backgroundImg={img}
+                   border={'solid red 10px'}
+            >
+                <H1
+                    text={"Special 50% Off"}
+                    color={'red'}
+                    fontFamily={'OrgonPlan-DemiBold, serif'}
+                />
+                <H4
+                    text={"Special 50% Off"}
+                    color={'red'}
+                />
+                <H2
+                    text={"Special 50% Off"}
+                    color={'red'}
+                />
+            </Frame>
+
+            {/*<Frame backgroundColor={'#ffffff'}*/}
+            {/*    border={'red solid 5px'}*/}
+            {/*       padding={'10px'}*/}
+            {/*>*/}
+            {/*    <CustomOwlCarousel/>*/}
+            {/*</Frame>*/}
         </div>
     )
 }

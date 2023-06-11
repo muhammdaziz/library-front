@@ -1,33 +1,33 @@
 import styled from "styled-components";
+import StyledButton from "./StyledButton";
 
 const StyledImg = styled.img`
-  margin: -5px 0;
-  transform: scale(1.4);
+  margin-top: 7px;
 `
 
 const Button = (
     {
         onclick,
         backgroundColor,
-        src
+        src,
+        borderRadius,
 
     }) => {
 
     const style = {
-        padding: '15px 20px',
-        borderRadius: '10px',
+        borderRadius: borderRadius ? borderRadius : '10px',
+        cursor: 'pointer',
         border: 'none',
-        fontSize: '14px',
-        backgroundColor: backgroundColor ? backgroundColor : 'rgb(1, 2, 3, 0.5)',
+        backgroundColor: backgroundColor ? backgroundColor : 'unset',
     }
 
     return(
-        <button
+        <StyledButton
             onClick={onclick}
             style={style}
         >
             <StyledImg src={src} alt={'>'}/>
-        </button>
+        </StyledButton>
     )
 }
 

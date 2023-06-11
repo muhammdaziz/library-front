@@ -1,3 +1,9 @@
+import styled from "styled-components";
+import Image from "../component/image/img";
+import favourite from '../assets/icons/favorite2.svg'
+import favourite2 from '../assets/icons/favorite3.svg'
+import Frame from "../component/frame/frame";
+
 export const ACCESS_TOKEN = "AccessToken";
 export const REFRESH_TOKEN = "RefreshToken";
 export const USERNAME = "username";
@@ -6,3 +12,112 @@ export const IMAGE_PATH = '/files/images/';
 export const DOWNLOAD_PATH = '/files/download/';
 
 export const IMG = '../../assets/img/students-reading-book-together-6024654-4989651.png';
+export const ArrowRight = '../../assets/icons/arrow-right.svg';
+
+export const Color = 'rgb(105, 96, 205)';
+export const Color1 = 'rgb(121, 112, 221)';
+export const Color2 = 'rgb(180,172,234)';
+export const Color3 = 'rgb(240, 238, 253)';
+export const ColorGrey = 'rgb(182,182,182)';
+export const ColorGrey2 = 'rgb(208,207,207)';
+export const ColorGrey3 = 'rgb(227,226,226)';
+export const ColorWhite = 'rgb(255,255,255)';
+export const ColorBlack = 'rgb(16, 20, 43)';
+export const ColorOrange = 'rgb(238, 125, 87)';
+
+
+export const mapList = function (list) {
+    return list.map(item => item).join(', ')
+}
+
+export const getPoints = function (point) {
+    if(point > 5 || point < 0)
+        return 'wrong point count';
+
+    let arr = [];
+    for (let i = 0; i < point; i++) {
+        arr.push(
+            <Image
+                height={'20px'}
+                width={'20px'}
+                key={i}
+                src={favourite}
+                alt={'star'}
+            />
+        );
+    }
+
+    for (let i = point; i < 5; i++) {
+        arr.push(
+            <Image
+                height={'20px'}
+                width={'20px'}
+                key={i}
+                src={favourite2}
+                alt={'star'}
+            />
+        );
+    }
+
+    return arr
+}
+
+export const getUrl = function (str) {
+
+    let url = ''
+    let c;
+
+    str = str.toLowerCase()
+
+    for (let i = 0; i < str.length; i++) {
+        c = str.charAt(i)
+
+        if(c === ' ')
+            url.concat('-')
+        else
+            url.concat(c)
+    }
+
+    return url
+}
+
+export const getNumber = function (num) {
+
+    let res = ''
+    let count = 0;
+
+    num = num.toString()
+
+    for (let i = num.length-1; i >= 0; i--) {
+        if (count === 3){
+            count = 0;
+            res += ','
+        }
+
+        count++
+        res += num.charAt(i)
+    }
+
+    num = ''
+
+    for (let i = res.length-1; i >= 0; i--) {
+        num += res.charAt(i)
+    }
+
+    return num
+}
+
+
+
+// export const StyleButton = styled.button`
+//     cursor: pointer;
+//   outline: none;
+//   background-color: #b78103;
+//   border: none;
+//   padding: 0;
+//
+// `
+
+export const Lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+
+

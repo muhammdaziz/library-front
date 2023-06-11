@@ -1,29 +1,39 @@
+import StyledButton from "./StyledButton";
+
 const Button = (
     {
         onclick,
         color,
         text,
         backgroundColor,
-        fontSize
+        fontSize,
+        padding,
+        border,
+        margin,
+        borderRadius,
 
+        children
     }) => {
 
     const style = {
-        padding: '15px',
-        borderRadius: '10px',
-        border: 'none',
-        fontSize: fontSize ? fontSize : '16px',
-        color: color ? color : 'white',
-        backgroundColor: backgroundColor ? backgroundColor : 'rgb(1, 2, 3, 0.5)',
+        borderRadius,
+        border: border ? border : 'none',
+        fontSize,
+        padding,
+        margin,
+        overflow: 'hidden',
+        color,
+        backgroundColor: backgroundColor ? backgroundColor : 'unset',
     }
 
     return(
-        <button
+        <StyledButton
             onClick={onclick}
             style={style}
+
         >
-            {text}
-        </button>
+            {text ? text : children}
+        </StyledButton>
     )
 }
 

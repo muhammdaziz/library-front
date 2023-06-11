@@ -1,0 +1,84 @@
+.custom-carousel {
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  background-color: #0c53b7;
+}
+
+.custom-inner {
+  height: 100%;
+  background-color: #7a0c2e;
+  white-space: nowrap;
+  transition: transform 0.3s;
+}
+
+.custom-carousel-item {
+  white-space: pre-wrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /*background: #45b36b;*/
+  height: 100%;
+  color: #fff;
+}
+
+.indicator{
+  display: flex;
+  justify-content: center;
+}
+
+.dot-indicators {
+  column-gap: 10px;
+}
+
+.arrow-indicator{
+  width: 30px;
+  background-color: unset;
+  border: none;
+}
+
+.left-indicator{
+  position: absolute;
+  top: 43%;
+  left: 15px;
+  background-color: #88e49c;
+}
+
+.right-indicator{
+  position: absolute;
+  top: 43%;
+  right: 15px;
+  background-color: #88e49c;
+}
+
+.best-seller-arrow-indicator{
+  width: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.best-seller-left-arrow-indicator{
+  padding: 2px 8px 2px 5px;
+}
+.best-seller-right-arrow-indicator{
+  padding: 2px 5px 2px 8px;
+}
+
+.top-promo-carousel-indicators {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10%;
+  left: 6%;
+}
+
+.top-promo-carousel-indicators > button {
+  background-color: rgb(180,172,234);
+}
+
+.top-promo-carousel-indicators > button.active {
+  background-color: rgb(105, 96, 205);
+  color: #fff;
+}
