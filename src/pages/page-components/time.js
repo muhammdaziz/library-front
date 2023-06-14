@@ -7,19 +7,35 @@ import {ColorGrey2, ColorOrange} from "../../utils";
 export const Time = ({
     deadline
                      }) => {
-    const [days, setDays] = React.useState(0);
-    const [hours, setHours] = React.useState(0);
-    const [minutes, setMinutes] = React.useState(0);
-    const [seconds, setSeconds] = React.useState(0);
+    const [days, setDays] = React.useState('0');
+    const [hours, setHours] = React.useState('0');
+    const [minutes, setMinutes] = React.useState('0');
+    const [seconds, setSeconds] = React.useState('0');
 
     const getTime = () => {
         const time = new Date(deadline) - Date.now();
 
-        setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
-        setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
-        setMinutes(Math.floor((time / 1000 / 60) % 60));
-        setSeconds(Math.floor((time / 1000) % 60));
+        let day = Math.floor(time / (1000 * 60 * 60 * 24))
+        setDays(getValue(day))
+
+        let hour = Math.floor((time / (1000 * 60 * 60)) % 24)
+        setHours(getValue(hour))
+
+        let minute = Math.floor((time / 1000 / 60) % 60)
+        setMinutes(getValue(minute));
+
+        let second = Math.floor((time / 1000) % 60)
+        setSeconds(getValue(second));
     };
+
+    const getValue = function (time) {
+        if (time < 0)
+            return '0';
+        else if (time < 10)
+            return '0' + time;
+        else
+            return time;
+    }
 
     React.useEffect(() => {
         const interval = setInterval(() => getTime(deadline), 1000);
@@ -37,12 +53,11 @@ export const Time = ({
             borderRadius={'15px'}
             textAlign={'center'}
         >
-            <Frame
-            >
+            <Frame>
                 <H1
                     className={'demi-bold'}
                     color={ColorOrange}
-                    text={days < 10 ? "0" + days : days}
+                    text={days}
                 />
                 <H5
                     className={'light'}
@@ -50,12 +65,11 @@ export const Time = ({
                     text={'Day'}
                 />
             </Frame>
-            <Frame
-            >
+            <Frame>
                 <H1
                     className={'demi-bold'}
                     color={ColorOrange}
-                    text={hours < 10 ? "0" + hours : hours}
+                    text={hours}
                 />
                 <H5
                     className={'light'}
@@ -63,12 +77,11 @@ export const Time = ({
                     text={'Hour'}
                 />
             </Frame>
-            <Frame
-            >
+            <Frame>
                 <H1
                     className={'demi-bold'}
                     color={ColorOrange}
-                    text={minutes < 10 ? "0" + minutes : minutes}
+                    text={minutes}
                 />
                 <H5
                     className={'light'}
@@ -76,12 +89,11 @@ export const Time = ({
                     text={'Minute'}
                 />
             </Frame>
-            <Frame
-            >
+            <Frame>
                 <H1
                     className={'demi-bold'}
                     color={ColorOrange}
-                    text={seconds < 10 ? "0" + seconds : seconds}
+                    text={seconds}
                 />
                 <H5
                     className={'light'}

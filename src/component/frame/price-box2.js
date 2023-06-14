@@ -3,13 +3,8 @@ import a from '../../assets/temp/bg.jpg'
 import P from "../text/p";
 import H4 from "../text/h4";
 import H2 from "../text/h2";
+import Temp from "../../pages/page-components/Temp";
 
-const StyledDiv = styled.div`
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 1fr 0.5fr;
-  padding: 10px 10px 7px;
-`
 const frame = ({
     backgroundColor,
     border,
@@ -23,32 +18,40 @@ const frame = ({
     text1FontSize,
     text1Color,
     textAlign,
-
-    children
+    justifyContent
                }) => {
 
-    const style = {
-        border,
-        borderRadius,
-        backgroundColor,
-        textAlign,
-        color : color ? color : '#fff',
-    }
-    
+    const StyledDiv = styled.div`
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: ${justifyContent ? justifyContent : 'end'};
+      padding: 10px 10px 7px;
+      border: ${border};
+      border-radius: ${borderRadius};
+      text-align: ${textAlign};
+      background-color: ${backgroundColor};
+      color: ${color ? color : '#fff'};
+    `
+
     return (
-        <StyledDiv className={className} style={style}>
+        <StyledDiv className={className}>
             <H4
+                className={'demi-bold'}
                 color={text1Color ? text1Color : '#252222'}
-                text={text1}
+                text={'$ ' + text1}
                 fontSize={text1FontSize}
             />
-            <H4
-                margin={text2Margin}
-                fontSize={text2FontSize}
-                textDecoration={'line-through'}
-                color={'#909090'}
-                text={text2}
-            />
+
+            {text2 ?
+                <H4
+                    className={'light'}
+                    margin={text2Margin}
+                    fontSize={text2FontSize}
+                    textDecoration={'line-through'}
+                    color={'#909090'}
+                    text={'$' + text2}
+                />
+                : ''}
         </StyledDiv>
     )
 }

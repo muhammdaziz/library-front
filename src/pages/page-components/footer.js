@@ -98,6 +98,7 @@ export const Footer = () => {
                     <Styled2>
                         {categories.slice(0, 12).map((category, index) =>
                             <P
+                                key={index}
                                 fontSize={'15px'}
                                 margin={'6% 0'}
                                 text={category}
@@ -129,6 +130,7 @@ export const Footer = () => {
                         {
                             quickLinks.slice(0, 7).map((link, index) =>
                                 <AHref
+                                    key={index}
                                     fontSize={'15px'}
                                     margin={'6.5% 0'}
                                     text={link}

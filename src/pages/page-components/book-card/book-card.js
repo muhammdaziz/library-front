@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import Frame from "../../../component/frame/frame";
 import Image from "../../../component/image/book-img";
+import {IMAGE_PATH} from "../../../utils";
 
 const bookCard = ({
     book,
@@ -22,7 +22,7 @@ const bookCard = ({
                 }}
                 height={imgHeight}
                 className={className}
-                src={book.img}
+                src={IMAGE_PATH + book.image}
                 alt={'image'}
             />
         </Frame>

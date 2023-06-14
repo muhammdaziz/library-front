@@ -1,5 +1,5 @@
 import Frame from "../../component/frame/frame";
-import {Color3, ColorGrey} from "../../utils";
+import {ColorGrey, IMAGE_PATH} from "../../utils";
 import Image from "../../component/image/img";
 import {Heading} from "../../component/text/heading";
 import styled from "styled-components";
@@ -15,6 +15,7 @@ const Styled = styled.div`
 export const GridBox = ({
     data,
     index,
+    svg,
     svgBackgroundColor
                         }) => {
 
@@ -28,7 +29,8 @@ export const GridBox = ({
                 borderRadius={'18px'}
                 maxHeight={'60px'}
             >
-                <Image src={data.svg}/>
+                {/*<Image src={IMAGE_PATH + data.svg}/>*/}
+                <Image src={svg}/>
             </Frame>
             <Frame>
                 <Heading

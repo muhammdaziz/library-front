@@ -1,15 +1,36 @@
 import Frame from "../../component/frame/frame";
-import H1 from "../../component/text/h1";
-import P from "../../component/text/p";
 import {Heading} from "../../component/text/heading";
 import {Time} from "./time";
 
 import {flash} from "../../utils/temp";
 import BookCard2 from "./book-card/book-card2";
+import {useEffect, useState} from "react";
+import axios from "axios";
+import {BASE_PATH} from "../../utils";
+import {toast} from "react-toastify";
 
 export const Flash = () => {
 
+    const [books, setBook] = useState([]);
+
+    const getBooks = () => {
+
+        axios.get(
+            BASE_PATH + "/book"
+        ).then(res =>
+            setBook(res.data.data)
+        ).catch(err =>
+            toast.error(err.response.data.errors[0].msg)
+        )
+    }
+
+    useEffect(() =>
+        getBooks(), []
+    )
+
     return(
+        flash.time > new Date().getTime() ?
+
         <Frame
             padding={'3% 8%'}
         >
@@ -32,7 +53,7 @@ export const Flash = () => {
                 className={'grid-5'}
                 margin={'6% 0 0 0'}
             >
-                {flash.books.slice(0, 5).map((book, index) =>
+                {books.slice(0, 5).map((book, index) =>
                     <BookCard2
                         imgHeight={'280px'}
                         book={book}
@@ -41,6 +62,8 @@ export const Flash = () => {
                 )}
             </Frame>
         </Frame>
+
+            : ''
     )
 }
 

@@ -2,8 +2,6 @@
 import OwlCarousel from "react-owl-carousel";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import Temp from "../../pages/page-components/Temp";
-import Temp2 from "../../pages/page-components/Temp2";
 import './owl-carousel.css'
 
 export default function CustomOwlCarousel({
@@ -44,8 +42,8 @@ export default function CustomOwlCarousel({
             dots={dots}
             items={items}
             nav={nav}
-            touchDrag={true}
-            lazyLoad={true}
+            // touchDrag={true}
+            // lazyLoad={true}
             // responsive={state.responsive}// add this line
             animateOut={'fadeOut'}
             animateIn={'flipInX'}

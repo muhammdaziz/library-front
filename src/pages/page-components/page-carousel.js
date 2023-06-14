@@ -1,7 +1,6 @@
 import CustomCarousel, {CarouselItem} from "../../component/carousel/custom-carousel";
 import H5 from "../../component/text/h5";
-import {promotions} from "../../utils/temp";
-import {Color, ColorBlack, ColorGrey} from "../../utils";
+import {BASE_PATH, Color, ColorBlack, ColorGrey, IMAGE_PATH} from "../../utils";
 import H1 from "../../component/text/h1";
 import H2 from "../../component/text/h2";
 import LeftIconyTextButton from "../../component/button/LeftIconyTextButton";
@@ -26,7 +25,7 @@ const StyledDiv3 = styled.div`
 `
 
 const pageCarousel = ({
-
+    promotions,
 
                       }) => {
 
@@ -42,7 +41,7 @@ const pageCarousel = ({
                         borderRadius={'15px'}
                         overflow={'hidden'}
                         padding={'3% 0'}
-                        backgroundImg={promotion.bgImg}
+                        backgroundImg={IMAGE_PATH + promotion.bgImg}
                     >
                         <StyledDiv2>
                             <H5
@@ -66,7 +65,7 @@ const pageCarousel = ({
                             />
 
                             <H5
-                                text={promotion.content}
+                                text={promotion.description}
                                 color={ColorBlack}
                                 fontFamily={'OrgonPlan-Light'}
                                 fontSize={'11px'}

@@ -1,10 +1,11 @@
-import Frame from "../../component/frame/frame";
 import styled from "styled-components";
-import Temp2 from "./Temp2";
 
-import {promotion} from "../../utils/temp";
 import PageCarousel from "./page-carousel";
 import BestSeller from "./bestSeller";
+import {useEffect, useRef, useState} from "react";
+import axios from "axios";
+import {ACCESS_TOKEN, BASE_PATH} from "../../utils";
+import {toast} from "react-toastify";
 
 const Styled = styled.div`
   display: grid;
@@ -13,17 +14,46 @@ const Styled = styled.div`
   padding: 2.5% 8%;
 `
 
+const TopDisplay = () => {
 
+    const [promotions, setPromotions] = useState([]);
 
-const topDisplay = () => {
+    const toastId = useRef(null);
+
+    const getPromos = () => {
+
+        axios.get(
+                BASE_PATH+'/promotion',
+                {
+                    headers:
+                        {
+                            Authorization: localStorage.getItem(ACCESS_TOKEN)
+                        }
+                    }
+            )
+            .then(res => {
+                setPromotions(res.data.data)
+            })
+            .catch(err => {
+                if(! toast.isActive(toastId.current))
+                    toastId.current = toast.error(err.response.data.errors[0].msg)
+                }
+            )
+    }
+
+    useEffect(() => {
+        getPromos();
+    }, [])
 
     return(
-        <Styled>
-            <PageCarousel/>
+            <Styled>
+                <PageCarousel
+                    promotions={promotions}
+                />
 
-            <BestSeller/>
-        </Styled>
+                <BestSeller/>
+            </Styled>
     )
 }
 
-export default topDisplay;
+export default TopDisplay;

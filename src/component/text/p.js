@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ColorBlack} from "../../utils";
+import {ColorBlack, getLimitedText} from "../../utils";
 
 const Styled = styled.p`
 `
@@ -8,7 +8,6 @@ const P = ({
     limit,
     width,
     text,
-    key,
     color,
     fontSize,
     fontFamily,
@@ -28,12 +27,11 @@ const P = ({
         margin,
     }
 
-    if(text.length > limit)
-        text = text.slice(0, limit).trim().concat('...')
+    if(limit && text.length > limit)
+        text = getLimitedText(text, limit)
 
     return(
         <Styled
-            key={key}
             style={style}
             className={className}
         >

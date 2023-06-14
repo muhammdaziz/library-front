@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Frame from "../../../component/frame/frame";
 import H4 from "../../../component/text/h4";
 import P from "../../../component/text/p";
-import {Color, ColorOrange, mapList} from "../../../utils";
+import {Color, ColorOrange, getDiscountPrice, IMAGE_PATH, mapList} from "../../../utils";
 import PriceBox2 from "../../../component/frame/price-box2";
 import Image from "../../../component/image/book-img";
 import favourite from '../../../assets/icons/favorite2.svg'
@@ -12,17 +12,6 @@ const Styled = styled.img`
   //width: 100%;
 `
 
-const Styled3 = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  padding: 15px 0;
-`
-
-const Styled4 = styled.div`
-  display: grid;
-  text-align: right;
-  grid-template-columns: 1fr 1.3fr;
-`
 
 const Styled2 = styled.div`
   background-color: rgba(238, 125, 87, 0.85);
@@ -43,15 +32,27 @@ const bookCard = ({
 
                   }) => {
 
-    if (book.genre.length > 3)
-        book.genre = book.genre.slice(0, 3).concat('..')
+    if (book.genres.length > 3)
+        book.genres = book.genres.slice(0, 3).concat('..')
+
+    const Styled3 = styled.div`
+      display: grid;
+      grid-template-columns: ${book.points === 0 ? '1fr' : '1fr 3fr'};
+      padding: 10px 0;
+    `
+
+    const Styled4 = styled.div`
+      display: ${book.points === 0 ? 'none' : 'grid'};
+      text-align: right;
+      grid-template-columns: 1fr 1.3fr;
+      padding: 20% 0;
+    `
 
     return (
         <Frame
             key={index}
             border={border}
             borderRadius={borderRadius}
-            // backgroundColor={ColorGrey}
         >
             <Frame
                 borderRadius={'12px'}
@@ -60,50 +61,53 @@ const bookCard = ({
                 <Image
                     height={imgHeight}
                     className={className}
-                    src={book.img}
+                    src={IMAGE_PATH + book.image}
                     alt={'image'}
                 />
-                <Styled2
-                >
-                    <H4
-                        color={'#fff'}
-                        className={'bold'}
-                        text={book.discount.percent}
-                    />
-                </Styled2>
+                {book.discount ?
+                    <Styled2>
+                        <H4
+                            color={'#fff'}
+                            className={'bold'}
+                            text={book.discount.value + '%'}
+                        />
+                    </Styled2>
+                : ''}
             </Frame>
             <H4
                 margin={'20px 0 5px 0'}
-                fontSize={'14px'}
+                fontSize={'16px'}
                 className={'demi-bold'}
                 limit={20}
                 text={book.title}
             />
 
             <P
-                fontSize={'11px'}
+                fontSize={'13px'}
                 color={Color}
-                text={mapList(book.genre)}
+                text={mapList(book.genres)}
             />
 
             <Styled3>
                 <Styled4>
                     <Image
+                        margin={'10% 0 0 0'}
                         src={favourite}
                     />
                     <P
+                        margin={'0 0 0 5%'}
                         className={'bold'}
-                        margin={'30% 0 0 0'}
                         color={ColorOrange}
-                        text={book.point}
+                        text={book.points}
                     />
                 </Styled4>
                 <PriceBox2
-                    text1={book.price}
-                    text2={book.discount.percent}
+                    text1={book.discount ? getDiscountPrice(book.price, book.discount.value) : book.price}
+                    text2={book.discount ? book.price : null}
                     text1Color={Color}
-                    text1FontSize={'14px'}
+                    text1FontSize={'16px'}
                     text2FontSize={'13px'}
+                    text2Margin={false ? '1% 5% 0' : '1% 0 0 5%'}
                 />
             </Styled3>
 

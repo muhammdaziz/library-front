@@ -3,7 +3,7 @@ import Frame from "../../component/frame/frame";
 import RecommendOwlCarousel from "../../component/carousel/owlCarousel";
 import BookCard from "./book-card/book-card";
 import {Heading} from "../../component/text/heading";
-
+import {IMAGE_PATH} from "../../utils";
 
 const recommendBox = ({
                           content,
@@ -15,7 +15,7 @@ const recommendBox = ({
         <Frame
             borderRadius={'13px'}
             overflow={'hidden'}
-            backgroundImg={content.bkgImage}
+            backgroundImg={IMAGE_PATH + content.bkgImage}
             padding={'5% 8% 3% 8%'}
         >
             <Frame

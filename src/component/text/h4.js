@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ColorBlack} from "../../utils";
+import {ColorBlack, getLimitedText} from "../../utils";
 
 const StyledH4 = styled.h4`
     
@@ -30,9 +30,8 @@ const H4 = ({
         textDecoration
     }
 
-    if (limit !== null && text.length > limit)
-        text = text.slice(0, limit) + '..'
-
+    if(limit && text.length > limit)
+        text = getLimitedText(text, limit)
 
     return(
         <StyledH4

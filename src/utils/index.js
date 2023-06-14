@@ -7,9 +7,9 @@ import Frame from "../component/frame/frame";
 export const ACCESS_TOKEN = "AccessToken";
 export const REFRESH_TOKEN = "RefreshToken";
 export const USERNAME = "username";
-export const BASE_PATH = 'http://localhost:8090/api/v1';
-export const IMAGE_PATH = '/files/images/';
-export const DOWNLOAD_PATH = '/files/download/';
+export const BASE_PATH = 'http://localhost:8090/api';
+export const IMAGE_PATH = BASE_PATH + '/file/image/';
+export const DOWNLOAD_PATH = BASE_PATH + '/files/download/';
 
 export const IMG = '../../assets/img/students-reading-book-together-6024654-4989651.png';
 export const ArrowRight = '../../assets/icons/arrow-right.svg';
@@ -107,7 +107,20 @@ export const getNumber = function (num) {
     return num
 }
 
+export const getLimitedText = function (text, limit) {
+    let index = text.lastIndexOf(' ', limit)
 
+    return text.slice(0, index).trim().concat('...')
+}
+
+export const getDiscountPrice = function (price, percent) {
+    price = price - (price * percent / 100) + ''
+
+    let index = price.indexOf('.')
+
+    return price.substring(0, index + 3)
+
+}
 
 // export const StyleButton = styled.button`
 //     cursor: pointer;

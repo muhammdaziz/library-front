@@ -1,10 +1,7 @@
-import styled from "styled-components";
 import Frame from "../../../component/frame/frame";
-import H1 from "../../../component/text/h1";
-import H5 from "../../../component/text/h5";
 import H4 from "../../../component/text/h4";
 import P from "../../../component/text/p";
-import {Color, ColorGrey} from "../../../utils";
+import {Color, getDiscountPrice, IMAGE_PATH} from "../../../utils";
 import {mapList} from "../../../utils";
 import PriceBox2 from "../../../component/frame/price-box2";
 import Image from "../../../component/image/book-img";
@@ -20,15 +17,14 @@ const bookCard = ({
 
                   }) => {
 
-    if (book.genre.length > 2)
-        book.genre = book.genre.slice(0, 2).concat('..')
+    if (book.genres.length > 2)
+        book.genres = book.genres.slice(0, 2).concat('..')
 
     return(
         <Frame
             key={index}
             border={border}
             borderRadius={borderRadius}
-            // backgroundColor={ColorGrey}
             textAlign={'center'}
         >
             <Image
@@ -36,28 +32,31 @@ const bookCard = ({
                 borderRadius={'12px'}
                 height={imgHeight}
                 className={className}
-                src={book.img}
+                src={IMAGE_PATH + book.image}
                 alt={'image'}
             />
             <H4
-                margin={'10px 0 7px 0'}
-                fontSize={'14px'}
+                margin={'10px 0 0px 0'}
+                fontSize={'16px'}
                 className={'demi-bold'}
                 limit={18}
                 text={book.title}
             />
 
             <P
-                fontSize={'11px'}
+                fontSize={'13px'}
                 color={Color}
-                text={mapList(book.genre)}
+                text={mapList(book.genres)}
             />
 
             <PriceBox2
-                text1={book.price}
-                text2={book.discount.percent}
+                justifyContent={'center'}
+                text1={book.discount ? getDiscountPrice(book.price, book.discount.value) : book.price}
+                text2={book.discount ? book.price : null}
                 text1Color={Color}
-                text2FontSize={'13px'}
+                text1FontSize={'22px'}
+                text2FontSize={'16px'}
+                text2Margin={'5px 10px 0'}
             />
 
         </Frame>

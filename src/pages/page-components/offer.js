@@ -1,13 +1,29 @@
 import Frame from "../../component/frame/frame";
-import H1 from "../../component/text/h1";
-import P from "../../component/text/p";
 import CustomOwlCarousel from "../../component/carousel/owlCarousel";
-import Temp from "./Temp";
-import {offers} from "../../utils/temp";
 import {OfferBox} from "./offer-box";
 import {Heading} from "../../component/text/heading";
+import {useEffect, useState} from "react";
+import axios from "axios";
+import {BASE_PATH} from "../../utils";
+import {toast} from "react-toastify";
 
 export const Offer = () => {
+
+    const [offers, setOffers] = useState([])
+
+    const getOffers = () => {
+        axios.get(
+            BASE_PATH+'/offer',
+        ).then(res =>
+            setOffers(res.data.data)
+        ).catch(err =>
+            toast.error(err.response.data.errors[0].msg)
+        )
+    }
+
+    useEffect(() =>
+            getOffers(),
+        [])
 
     return(
         <Frame
@@ -29,6 +45,7 @@ export const Offer = () => {
                 className={'offer-carousel'}
             >
                 <CustomOwlCarousel
+                    key={`carousel_${offers.length}`}
                     margin={35}
                     nav
                     dots={false}

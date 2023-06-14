@@ -409,7 +409,7 @@ export const promotion = {
     header: 'BACK TO SCHOOL',
     title: 'Special 50% Off',
     subtitle: 'for our student community',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
+    describtion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
     btn1: 'Get the deal',
     btn2: 'See other promos',
     bgImg: img2
@@ -420,7 +420,7 @@ export const promotions = [
         header: 'BACK TO SCHOOL',
         title: 'Special 50% Off',
         subtitle: 'for our student community',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
         btn1: 'Get the deal',
         btn2: 'See other promos',
         bgImg: bg
@@ -429,7 +429,7 @@ export const promotions = [
         header: 'BACK TO SCHOOL',
         title: 'Special 50% Off',
         subtitle: 'for our student community',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
         btn1: 'Get the deal',
         btn2: 'See other promos',
         bgImg: bg
@@ -438,7 +438,7 @@ export const promotions = [
         header: 'BACK TO SCHOOL',
         title: 'Special 50% Off',
         subtitle: 'for our student community',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
         btn1: 'Get the deal',
         btn2: 'See other promos',
         bgImg: bg
@@ -447,7 +447,7 @@ export const promotions = [
         header: 'BACK TO SCHOOL',
         title: 'Special 50% Off',
         subtitle: 'for our student community',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
         btn1: 'Get the deal',
         btn2: 'See other promos',
         bgImg: bg
@@ -456,7 +456,7 @@ export const promotions = [
         header: 'BACK TO SCHOOL',
         title: 'Special 50% Off',
         subtitle: 'for our student community',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris',
         btn1: 'Get the deal',
         btn2: 'See other promos',
         bgImg: bg
@@ -621,7 +621,7 @@ export const books = [
     }
 ];
 
-export const services = [
+export const servicesI = [
     {
         svg: svg,
         title: 'Quickly Delivery',
@@ -673,7 +673,7 @@ export const offers = [
 ]
 
 export const flash = {
-    time: Date.parse('June, 10, 2023'),
+    time: Date.parse('June, 17, 2023'),
     books: books
 }
 
