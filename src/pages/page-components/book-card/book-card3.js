@@ -45,7 +45,7 @@ const bookCard = ({
       display: ${book.points === 0 ? 'none' : 'grid'};
       text-align: right;
       grid-template-columns: 1fr 1.3fr;
-      padding: 20% 0;
+      padding: 15% 0;
     `
 
     return (
@@ -91,11 +91,11 @@ const bookCard = ({
             <Styled3>
                 <Styled4>
                     <Image
-                        margin={'10% 0 0 0'}
                         src={favourite}
                     />
                     <P
-                        margin={'0 0 0 5%'}
+                        margin={'5% 0 0 10%'}
+                        textAlign={'left'}
                         className={'bold'}
                         color={ColorOrange}
                         text={book.points}
@@ -107,7 +107,7 @@ const bookCard = ({
                     text1Color={Color}
                     text1FontSize={'16px'}
                     text2FontSize={'13px'}
-                    text2Margin={false ? '1% 5% 0' : '1% 0 0 5%'}
+                    text2Margin={book.discount ? '1% 5% 0' : '1% 0 0 5%'}
                 />
             </Styled3>
 

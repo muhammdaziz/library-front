@@ -1,11 +1,13 @@
 import Frame from "../../component/frame/frame";
 import {Heading} from "../../component/text/heading";
-import {Color, Lorem} from "../../utils";
+import {BASE_PATH, Color, IMAGE_PATH, Lorem} from "../../utils";
 import styled from "styled-components";
-import {testimonial} from "../../utils/temp";
+// import {testimonial} from "../../utils/temp";
 import CustomOwlCarousel from "../../component/carousel/owlCarousel";
-import Temp from "./Temp";
 import {TestimonialBox} from "./testimonial-box";
+import axios from "axios";
+import {useEffect, useState} from "react";
+import {toast} from "react-toastify";
 
 const Styled = styled.div`
   width: 13%;
@@ -34,9 +36,26 @@ const StyledH = styled.h1`
   text-align: center;
 `
 
-export const Testimonial = ({}) => {
+export const Testimonial = () => {
 
-    if (testimonial.latestUsers.length > 5) {
+    const [testimonial, setTestimonial] = useState([])
+
+    const getFeedback = () => {
+        axios.get(
+            BASE_PATH + '/feedback/testimonial/0/20',
+        ).then(res =>
+            setTestimonial(res.data.data)
+        ).catch(err =>
+            toast.error(err.response.data.errors[0].msg)
+        )
+    }
+
+    useEffect(() =>
+        getFeedback(),
+        []
+    )
+
+    if (testimonial?.latestUsers?.length > 5) {
         testimonial.latestUsers = testimonial.latestUsers.slice(0, 4);
     }
 
@@ -66,10 +85,10 @@ export const Testimonial = ({}) => {
             />
 
             <Styled>
-                {testimonial.latestUsers.map((testimonial, index) =>
+                {testimonial.latestUsers?.map((user, index) =>
                     <StyledImg
                         key={index}
-                        src={testimonial.user.avatar}
+                        src={IMAGE_PATH + user.avatar}
                     />
                 )}
                 {testimonial.more ? <StyledH>{feedbackCount}</StyledH> : ''}
@@ -80,6 +99,7 @@ export const Testimonial = ({}) => {
                 className={'testimonial-carousel'}
             >
                 <CustomOwlCarousel
+                    key={`carousel2_${testimonial.length}`}
                     items={2}
                     center
                     loop
@@ -87,9 +107,9 @@ export const Testimonial = ({}) => {
                     margin={100}
 
                 >
-                    {testimonial.messages.map((message, index) =>
+                    {testimonial.feedbacks?.map((feedback, index) =>
                         <TestimonialBox
-                            testimonial={message}
+                            testimonial={feedback}
                             key={index}
                         />
                     )}

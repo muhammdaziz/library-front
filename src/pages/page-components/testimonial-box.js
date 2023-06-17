@@ -26,7 +26,7 @@ export const TestimonialBox = ({
     return (
 
         <Frame
-            padding={'5%'}
+            padding={'5% 5% 3% 5%'}
             borderRadius={'10px'}
             border={'0.5px solid '+ColorGrey3}
         >
@@ -37,11 +37,12 @@ export const TestimonialBox = ({
             />
             <Styled>
                 <GridBox2
-                    imgHeight={'50px'}
-                    imgWidth={'50px'}
+                    imgBorderRadius={'50%'}
+                    imgHeight={'55px'}
                     titleFontSize={'16px'}
                     titleMargin={'5px 0'}
                     data={data}
+                    apiImp
                 />
 
                 <Temp3/>
@@ -51,7 +52,7 @@ export const TestimonialBox = ({
                     gridGap={'0'}
                     padding={'13% 0 0 0'}
                 >
-                    {getPoints(testimonial.points).map((item) => item)}
+                    {getPoints(testimonial.point).map((item) => item)}
                 </Frame>
             </Styled>
         </Frame>

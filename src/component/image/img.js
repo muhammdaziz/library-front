@@ -1,27 +1,22 @@
 import styled from "styled-components";
 
-const StyledImg = styled.img`
-    height: 100%;
-    width: 100%;
-`
-
 const Image = ({
     src,
     alt,
     width,
     margin,
-    height
+    height,
+    borderRadius,
                }) => {
 
-    const style = {
-        height,
-        width,
-        margin
-    }
-
+    const StyledImg = styled.img`
+      width: ${width ? width : '100%'};
+      height: ${height ? height : '100%'};
+      margin: ${margin};
+      border-radius: ${borderRadius};
+    `
     return(
         <StyledImg
-            style={style}
             src={src}
             alt={alt}
         />

@@ -1,9 +1,8 @@
 import Frame from "../../component/frame/frame";
 import styled from "styled-components";
-import Temp from "./Temp";
 import LogoBtn from "../../component/button/LogoBtn";
 import P from "../../component/text/p";
-import {Color, Color3, ColorGrey, ColorGrey2, ColorGrey3, getUrl} from "../../utils";
+import {Color, Color3, ColorGrey2, getUrl} from "../../utils";
 import H4 from "../../component/text/h4";
 import {A} from "../../component/text/a-img";
 import {A as AHref} from "../../component/text/a";
@@ -151,11 +150,11 @@ export const Footer = () => {
                         borderRadius={'10px'}
                         overflow={'hidden'}
                     >
-                        <YandexMap
-                            width={'100%'}
-                            height={'100px'}
-                            coordinates={ourStore.location}
-                        />
+                        {/*<YandexMap*/}
+                        {/*    width={'100%'}*/}
+                        {/*    height={'100px'}*/}
+                        {/*    coordinates={ourStore.location}*/}
+                        {/*/>*/}
 
                         <Styled3>
                             <Image

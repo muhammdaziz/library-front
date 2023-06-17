@@ -36,8 +36,31 @@ const Home = () => {
         )
     }
 
+    // const addFeedback = () => {
+    //
+    //     axios.post(
+    //         BASE_PATH + "/feedback",
+    //         {
+    //             message: 'sdsdsa',
+    //             point: 3
+    //         },
+    //         {
+    //             headers:{
+    //                 Authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlckFkbWluQGFkbWluLmNvbSIsImlhdCI6MTY4NjkyNjc4OCwiZXhwIjoxNjg2OTk4Nzg4fQ.vP4Rh-Ky_q178I0fHkoqVJlJ3GNGv3je8or6j5oWBGGmmRQ4ZvCvOfpUF_WwA-HzwLTplvgI5imNJTZfQ3P5xA'
+    //             }
+    //         }
+    //     ).then(res =>
+    //         console.log(res)
+    //         // setBooks(res.data.data)
+    //     ).catch(err =>
+    //         toast.error(err.response.data.errors[0].msg)
+    //     )
+    // }
+
+
     useEffect(() =>
-        getBooks(), []
+        getBooks(),
+        []
     )
 
     const contents = {books: books}

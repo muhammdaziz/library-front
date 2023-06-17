@@ -1,5 +1,5 @@
 import Frame from "../../component/frame/frame";
-import {Color, Color3, ColorGrey} from "../../utils";
+import {Color, Color3, ColorGrey, IMAGE_PATH} from "../../utils";
 import Image from "../../component/image/img";
 import {Heading} from "../../component/text/heading";
 import styled from "styled-components";
@@ -21,6 +21,8 @@ export const GridBox2 = ({
     titleFontSize,
     titleMargin,
     subtitleColor,
+    imgBorderRadius,
+    apiImp,
                         }) => {
 
     return(
@@ -28,9 +30,10 @@ export const GridBox2 = ({
             key={index}
         >
             <Image
+                borderRadius={imgBorderRadius}
                 width={imgWidth}
                 height={imgHeight}
-                src={data.img}
+                src={apiImp ? IMAGE_PATH + data.img : data.img}
             />
 
             <Frame

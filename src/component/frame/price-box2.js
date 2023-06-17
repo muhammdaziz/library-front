@@ -18,6 +18,7 @@ const frame = ({
     text1FontSize,
     text1Color,
     textAlign,
+    padding,
     justifyContent
                }) => {
 
@@ -25,7 +26,7 @@ const frame = ({
       display: flex;
       flex-wrap: wrap;
       justify-content: ${justifyContent ? justifyContent : 'end'};
-      padding: 10px 10px 7px;
+      padding: ${padding ? padding : '10px 10px 7px'};
       border: ${border};
       border-radius: ${borderRadius};
       text-align: ${textAlign};
