@@ -1,0 +1,40 @@
+.custom_accordion {
+    list-style: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.custom_accordion_item {
+}
+
+.custom_accordion .button {
+    border: 1px solid #e1e1e1;
+    font-size: 20px;
+    background-color: unset;
+    text-align: left;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.custom_accordion .control {
+    font-size: 20px;
+}
+
+.custom_accordion .answer {
+    padding: 20px;
+}
+
+.custom_accordion .answer_wrapper {
+    height: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: height ease 0.5s;
+    border: 1px solid #e1e1e1;
+    border-top: none;
+}

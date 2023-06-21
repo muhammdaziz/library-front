@@ -9,7 +9,7 @@ export const REFRESH_TOKEN = "RefreshToken";
 export const USERNAME = "username";
 export const BASE_PATH = 'http://localhost:8090/api';
 export const IMAGE_PATH = BASE_PATH + '/file/image/';
-export const DOWNLOAD_PATH = BASE_PATH + '/files/download/';
+export const DOWNLOAD_PATH = BASE_PATH + '/file/download/';
 
 export const IMG = '../../assets/img/students-reading-book-together-6024654-4989651.png';
 export const ArrowRight = '../../assets/icons/arrow-right.svg';
@@ -18,7 +18,7 @@ export const Color = 'rgb(105, 96, 205)';
 export const Color1 = 'rgb(121, 112, 221)';
 export const Color2 = 'rgb(180,172,234)';
 export const Color3 = 'rgb(240, 238, 253)';
-export const ColorGrey = 'rgb(182,182,182)';
+export const ColorGrey = 'rgb(131,131,131)';
 export const ColorGrey2 = 'rgb(208,207,207)';
 export const ColorGrey3 = 'rgb(227,226,226)';
 export const ColorWhite = 'rgb(255,255,255)';
@@ -31,6 +31,9 @@ export const mapList = function (list) {
 }
 
 export const getPoints = function (point) {
+
+    point = Math.floor(point)
+
     if(point > 5 || point < 0)
         return 'wrong point count';
 
@@ -64,7 +67,7 @@ export const getPoints = function (point) {
 
 export const getUrl = function (str) {
 
-    let url = ''
+    let url = ""
     let c;
 
     str = str.toLowerCase()
@@ -72,11 +75,13 @@ export const getUrl = function (str) {
     for (let i = 0; i < str.length; i++) {
         c = str.charAt(i)
 
-        if(c === ' ')
-            url.concat('-')
+        if(c === " ")
+            url += ('-')
         else
-            url.concat(c)
+            url += (c)
+
     }
+
 
     return url
 }
@@ -120,6 +125,33 @@ export const getDiscountPrice = function (price, percent) {
 
     return price.substring(0, index + 3)
 
+}
+
+export function getCount(count) {
+    if (count > 999) return count / 1000 + 'K+'
+    if (count > 999999) return count / 1000000 + 'M+'
+    return count
+}
+
+export function getReviewPercent(reviews, value) {
+
+    let count = 0;
+
+    reviews.forEach(review =>
+        {
+            if(value === review.point)
+                count++;
+        }
+    )
+
+    value = ((100 / reviews.length) * count) + ''
+
+    let index = value.indexOf('.')
+
+    if(index === -1)
+        return value
+
+    return value.substring(0, index + 3)
 }
 
 // export const StyleButton = styled.button`

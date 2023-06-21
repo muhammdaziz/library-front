@@ -8,12 +8,14 @@ const StyledImg = styled.img`
 
 const Button = (
     {
+        imgMargin,
         onclick,
         color,
         text,
         backgroundColor,
         src,
-        fontSize
+        fontSize,
+        padding,
 
     }) => {
 
@@ -21,16 +23,18 @@ const Button = (
         borderRadius: '10px',
         border: 'none',
         fontSize,
+        padding,
         color: color ? color : 'white',
         backgroundColor: backgroundColor ? backgroundColor : 'unset',
     }
 
     return(
         <StyledButton
+            download
             onClick={onclick}
             style={style}
         >
-            <StyledImg src={src} alt={'>'}/>
+            <StyledImg style={{margin: imgMargin}} src={src} alt={'>'}/>
             {text}
         </StyledButton>
     )

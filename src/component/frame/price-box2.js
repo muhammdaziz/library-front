@@ -3,7 +3,7 @@ import a from '../../assets/temp/bg.jpg'
 import P from "../text/p";
 import H4 from "../text/h4";
 import H2 from "../text/h2";
-import Temp from "../../pages/page-components/Temp";
+import Temp from "../../pages/page-components/other/Temp";
 
 const frame = ({
     backgroundColor,

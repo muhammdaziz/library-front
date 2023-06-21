@@ -1,12 +1,16 @@
 
 import './index.css'
 import DoubleIconyButton from "../button/DoubleIconyButton";
+import {A} from "../text/a";
+import {getUrl} from "../../utils";
+import Frame from "../frame/frame";
 
 const CustomDropDown = ({
     leftImg,
     rightImg,
     text,
-    bkgColor
+    bkgColor,
+    links
                         }) => {
 
     return(
@@ -21,11 +25,20 @@ const CustomDropDown = ({
                 color={'rgb(105, 96, 205)'}
                 fontSize={'13px'}
             />
-            <div className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
+            <Frame
+                className="dropdown-content"
+            >
+                {
+                    links.map((link, index) => {
+                            return <A
+                                key={index}
+                                href={getUrl(link)}
+                                text={link}
+                            />
+                        }
+                    )
+                }
+            </Frame>
         </div>
     )
 }

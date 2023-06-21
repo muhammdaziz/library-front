@@ -18,15 +18,16 @@ export const Badge = ({
     fontSize,
     color,
     backgroundColor,
-    margin
-
+    margin,
+    fontWeight,
                       }) => {
 
     const style = {
         fontSize,
         color,
         backgroundColor,
-        margin
+        margin,
+        fontWeight
     }
 
     return(

@@ -2,8 +2,8 @@
 import OwlCarousel from "react-owl-carousel";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import Temp from "../../pages/page-components/Temp";
-import Temp2 from "../../pages/page-components/Temp2";
+import Temp from "../../pages/page-components/other/Temp";
+import Temp2 from "../../pages/page-components/other/Temp2";
 import './testimonial-owl-carousel.css'
 import Frame from "../frame/frame";
 

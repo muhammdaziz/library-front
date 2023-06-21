@@ -7,6 +7,8 @@ const StyledH2 = styled.h2`
 
 const H2 = ({
                 className,
+    cursor,
+    onclick,
     text,
     color,
     margin,
@@ -20,11 +22,13 @@ const H2 = ({
         fontSize,
         margin,
         fontFamily,
-        fontWeight
+        fontWeight,
+        cursor
     }
 
     return(
         <StyledH2
+            onClick={onclick}
             className={className}
             style={style}
         >

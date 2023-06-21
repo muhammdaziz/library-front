@@ -15,7 +15,8 @@ export const A = ({
     fontFamily,
     fontWeight,
     margin,
-    className
+    className,
+    children
             }) => {
 
     const style = {
@@ -33,7 +34,7 @@ export const A = ({
             style={style}
             className={className}
         >
-            {text}
+            {text ? text : children}
         </Styled>
     )
 }

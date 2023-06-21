@@ -5,10 +5,14 @@ import bg from '../assets/temp/bg.jpg'
 import img3 from '../assets/temp/people.jpeg'
 import img4 from '../assets/temp/book.png'
 import img5 from '../assets/temp/dddd.png'
+import svg20 from '../assets/icons/pin2.svg'
 import svg from '../assets/icons/pin.svg'
+import svg21 from '../assets/icons/sales2.svg'
 import svg1 from '../assets/icons/sales.svg'
 import svg2 from '../assets/icons/magic-wand.svg'
+import svg22 from '../assets/icons/magic-wand2.svg'
 import svg3 from '../assets/icons/favorite.svg'
+import svg23 from '../assets/icons/favorite22.svg'
 import recommend from '../assets/temp/recommend.jpg'
 import popular from '../assets/temp/popular.jpg'
 import avatar1 from '../assets/images/userImage.png'
@@ -23,9 +27,17 @@ import linkedIn from '../assets/icons/Linkind.svg'
 import instagram from '../assets/icons/instagram.svg'
 
 
-// Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
 
-const lorem = '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+
+export const menu = [
+    'Books',
+    'Genres',
+    'About Us',
+    'Contact Us',
+    'Check Out',
+]
+
 export const user = {
     firstname: 'Steven',
     lastname: 'Henry',
@@ -485,7 +497,7 @@ export const book =
 export const books = [
     {
         title: 'Pushing Clouds',
-        genre: ['ADVANTURE', 'SCIENCE','COMEDY'],
+        genres: ['ADVANTURE', 'SCIENCE','COMEDY'],
         img: img5,
         description: lorem,
         point: 4.7,
@@ -644,6 +656,29 @@ export const servicesI = [
     },
 ]
 
+export const services2 = [
+    {
+        svg: svg20,
+        title: 'Quickly Delivery',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
+    },
+    {
+        svg: svg21,
+        title: 'Secure Payment',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
+    },
+    {
+        svg: svg22,
+        title: 'Best Quality',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
+    },
+    {
+        svg: svg23,
+        title: 'Return Guarantee',
+        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
+    },
+]
+
 
 export const offer = {
 
@@ -673,7 +708,7 @@ export const offers = [
 ]
 
 export const flash = {
-    time: Date.parse('June, 17, 2023'),
+    time: Date.parse('June, 21, 2023'),
     books: books
 }
 

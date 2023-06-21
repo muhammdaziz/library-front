@@ -14,6 +14,7 @@ const P = ({
     fontWeight,
     textAlign,
     margin,
+    lineHeight,
     className
             }) => {
 
@@ -25,6 +26,7 @@ const P = ({
         fontFamily,
         fontWeight,
         margin,
+        lineHeight,
     }
 
     if(limit && text.length > limit)

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import './index.css';
 import {website} from "../../utils/temp";
-import {GridBox2} from "../../pages/page-components/grid-box2";
+import {GridBox2} from "../../pages/page-components/other/grid-box2";
 
 
 const Button = (
@@ -9,14 +9,10 @@ const Button = (
         width,
         onclick,
         margin,
+        data,
+        apiImg,
     }) => {
 
-
-    const data = {
-        title: website.name,
-        subtitle: website.subtitle,
-        img: website.img
-    }
 
     const Styled = styled.button`
         border: none;
@@ -31,6 +27,7 @@ const Button = (
             onClick={onclick}
         >
             <GridBox2
+                apiImp={apiImg}
                 textAlign={'left'}
                 titleFontSize={'32px'}
                 data={data}

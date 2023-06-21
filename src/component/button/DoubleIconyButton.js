@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import StyledButton from "./StyledButton";
 
 const StyledImg1 = styled.img`
   //margin: -5px 8px;

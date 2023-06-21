@@ -1,0 +1,32 @@
+.custom-accordion {
+    list-style: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.custom-accordion-item {
+}
+
+.custom-accordion .-button {
+    border: none;
+    font-size: 16px;
+    background-color: unset;
+    text-align: left;
+    justify-content: start;
+    cursor: pointer;
+    display: flex;
+}
+
+.custom-accordion .-answer {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.custom-accordion .answer-wrapper {
+    height: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: height ease 0.5s;
+    border: none;
+}

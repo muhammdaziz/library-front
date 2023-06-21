@@ -3,6 +3,7 @@ import StyledButton from "./StyledButton";
 const Button = (
     {
         onclick,
+        onsubmit,
         color,
         text,
         backgroundColor,
@@ -11,7 +12,8 @@ const Button = (
         border,
         margin,
         borderRadius,
-
+        type,
+        width,
         children
     }) => {
 
@@ -20,6 +22,7 @@ const Button = (
         border: border ? border : 'none',
         fontSize,
         padding,
+        width,
         margin,
         overflow: 'hidden',
         color,
@@ -28,7 +31,9 @@ const Button = (
 
     return(
         <StyledButton
+            type={type}
             onClick={onclick}
+            onSubmit={onsubmit}
             style={style}
 
         >

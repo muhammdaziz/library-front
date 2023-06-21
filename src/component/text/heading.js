@@ -17,6 +17,7 @@ export const Heading = ({
     subtitleCenter,
     subtitleLimit,
     subtitleFontSize,
+                            subtitleLineHeight,
                         }) => {
 
     return(
@@ -34,6 +35,7 @@ export const Heading = ({
                 color={titleColor}
             />
             <P
+                lineHeight={subtitleLineHeight}
                 className={subtitleClassName}
                 margin={subtitleCenter ? '0 auto' : ''}
                 width={widthSubtitle}

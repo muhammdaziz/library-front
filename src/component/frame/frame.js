@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 import a from '../../assets/temp/bg.jpg'
 
-const StyledDiv = styled.div`
-  font-family: OrgonPlan-Medium, sans-serif;
-  background-repeat: no-repeat;
-  background-size: cover;
-`
 const frame = ({
+    style,
     overflowY,
     textAlign,
     gridGap,
@@ -30,27 +26,30 @@ const frame = ({
     children
                }) => {
 
-    const style = {
-        padding : padding ? padding : '0',
-        margin : margin ? margin : '0',
-        borderRadius,
-        gridGap,
-        cursor,
-        borderTop,
-        borderBottom,
-        textAlign,
-        border,
-        maxHeight,
-        overflow,
-        justifyContent,
-        width,
-        overflowY,
-        boxShadow,
-        backgroundColor,
-        color : color ? color : '#fff',
-        backgroundImage: backgroundImg ? 'url('+ backgroundImg +')' : 'none'
-    }
-    
+    const StyledDiv = styled.div`
+      font-family: OrgonPlan-Medium, sans-serif;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: ${padding};
+      margin: ${margin};
+      border-radius: ${borderRadius};
+      grid-gap: ${gridGap};
+      cursor: ${cursor};
+      border-top: ${borderTop};
+      border-bottom: ${borderBottom};
+      text-align: ${textAlign};
+      border: ${border};
+      max-height: ${maxHeight};
+      overflow: ${overflow};
+      overflow-y: ${overflowY};
+      justify-content: ${justifyContent};
+      width: ${width};
+      box-shadow: ${boxShadow};
+      background-color: ${backgroundColor};
+      color: ${color ? color : '#fff'};
+      background-image: ${backgroundImg ? 'url('+ backgroundImg +')' : 'none'};
+    `
+
     return (
         <StyledDiv
             onClick={onclick}

@@ -7,6 +7,7 @@ const Image = ({
     margin,
     height,
     borderRadius,
+    style,
                }) => {
 
     const StyledImg = styled.img`
@@ -17,6 +18,7 @@ const Image = ({
     `
     return(
         <StyledImg
+            style={style}
             src={src}
             alt={alt}
         />

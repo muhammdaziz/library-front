@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Frame from "../../../component/frame/frame";
 import {Color, ColorGrey, getDiscountPrice, IMAGE_PATH, mapList} from "../../../utils";
 import PriceBox2 from "../../../component/frame/price-box2";
-import {GridBox2} from "../grid-box2";
+import {GridBox2} from "../other/grid-box2";
 import template from '../../../assets/icons/template.svg'
 import {Heading} from "../../../component/text/heading";
 import {Heading as Heading2} from "../../../component/text/heading2";
